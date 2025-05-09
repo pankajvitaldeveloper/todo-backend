@@ -102,7 +102,7 @@ const forgetPassword = async (req, res) => {
     });
 
     // Create reset password URL
-    const resetUrl = `http://localhost:5173/reset-password/${resetToken}`;
+    const resetUrl = `https://todo-frontend-azure-five.vercel.app/reset-password/${resetToken}`;
 
     // Email content
     const mailOptions = {
