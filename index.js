@@ -16,6 +16,10 @@ app.use(express.json());//parse json bodies in the request and what does it do? 
 const authRoutes = require("./routes/authRoutes");//import the authRoutes
 const todoRoutes = require("./routes/todoRoutes");//import the todoRoutes
 
+app.use("/", (req, res) => {
+    res.send("API Is Running");
+});
+
 app.use("/api/auth", authRoutes);
 app.use("/api/todo", todoRoutes);
 
