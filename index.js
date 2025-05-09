@@ -5,7 +5,10 @@ const config = require("./config");
 
 // Configure CORS
 app.use(cors({
-    origin: "http://localhost:5173", // Your frontend URL
+    origin: [
+        "http://localhost:5173",  // Local development
+        "https://todo-frontend-azure-five.vercel.app/", // Your Vercel domain
+    ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
     allowedHeaders: ["Content-Type", "Authorization"]
@@ -27,6 +30,7 @@ app.use("/api/todo", todoRoutes);
 // Connect to MongoDB
 config.connectDB();
 
-app.listen(config.PORT, () => {
-    console.log(`Server is running on port ${config.PORT}`);
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
