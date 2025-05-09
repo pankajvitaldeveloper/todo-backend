@@ -7,7 +7,7 @@ const config = require("./config");
 app.use(cors({
     origin: [
         "http://localhost:5173",  // Local development
-        "https://todo-frontend-azure-five.vercel.app/", // Your Vercel domain
+        "https://todo-frontend-azure-five.vercel.app", 
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
